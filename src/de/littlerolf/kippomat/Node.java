@@ -43,4 +43,13 @@ public class Node<T> {
 	public void setChildren(List<Node<T>> children) {
 		this.children = children;
 	}
+	
+	public void addChild(Node<T> c) { 
+		children.add(c);
+		c.setParent(this);
+	}
+	
+	public void print() {
+		
+	}
 }
