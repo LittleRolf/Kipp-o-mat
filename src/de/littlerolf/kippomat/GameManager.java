@@ -30,7 +30,7 @@ public class GameManager {
 		this.winSum = winNum;
 		
 		p1 = new MinMaxBot("Alf");
-		p2 = new Human();
+		p2 = new MinMaxBot("Udo");
 	}
 	
 	public void runGame() {
@@ -57,9 +57,9 @@ public class GameManager {
 			beginner = !beginner;
 		}
 		if(currentSum == winSum) 
-			System.out.println("[GM] Player " + ((beginner)? "1": "2") + " won the game");
+			System.out.println("----------\n[GM] Player " + ((beginner)? "1": "2") + " won the game\n----------");
 		else
-			System.out.println("[GM] Tie");
+			System.out.println("----------\n[GM] A strange game. The only winning move is not to play.\n----------");
 		
 	}
 }

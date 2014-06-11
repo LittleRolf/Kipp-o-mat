@@ -5,7 +5,7 @@ public class MinMaxBot extends Bot {
 	private Node<Integer> curr;
 
 	public MinMaxBot(String s) {
-
+		this.name = s;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class MinMaxBot extends Bot {
 
 		minMax(tree.getRoot(), -1, !isFirst);
 
-		tree.printTree();
+		//tree.printTree();
 		curr = tree.getRoot();
 
 	}
@@ -78,9 +78,9 @@ public class MinMaxBot extends Bot {
 			}
 		}
 
-		System.out.println("-----------------------");
+		/*System.out.println("-----------------------");
 		curr.print();
-		System.out.println("-----------------------");
+		System.out.println("-----------------------");*/
 		// find best move
 		// win the game
 		for (Node<Integer> n : curr.getChildren()) {

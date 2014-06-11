@@ -6,7 +6,7 @@ public class Bot implements Player {
 	protected int winNum;
 
 	protected int startNum = 1;
-	private String name = "Bot";
+	protected String name = "Bot";
 
 	public Bot(String name) {
 		this.name = name;
