@@ -26,7 +26,7 @@ public class Human implements Player {
 
 	@Override
 	public void initialize(int winSum,int startSum, boolean isFirst) {
-		System.out.println("   You are " + ((isFirst)? "" : "not") + "first");
+		System.out.println("   You are " + ((isFirst)? "" : "not ") + "first");
 		System.out.println("   The win number is " + winSum + ", starting by " + startSum);
 		br = new BufferedReader(new InputStreamReader(System.in));
 

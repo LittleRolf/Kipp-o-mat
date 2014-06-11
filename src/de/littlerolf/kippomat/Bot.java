@@ -2,40 +2,26 @@ package de.littlerolf.kippomat;
 
 public class Bot implements Player {
 
-	private Tree<Integer> tree = new Tree<Integer>();
-	private int winNum;
+	protected Tree<Integer> tree = new Tree<Integer>();
+	protected int winNum;
 
-	private int startNum = 1;
+	protected int startNum = 1;
 	private String name = "Bot";
 
 	public Bot(String name) {
 		this.name = name;
-		/*System.out.println("Building tree...");
-		tree.setRoot(new Node<Integer>(startNum));
-		buildTree(0, tree.getRoot());
-		System.out.println("Finished");*/
+		
 	}
 	public Bot() {
 		
 	}
 	
-	private void log(String msg) {
+	protected void log(String msg) {
 		System.out.println("[" + name + "] " + msg);
 	}
 
 	public void buildTree(int sum, Node<Integer> node) {
-		for (int i = 1; i <= 6; i++) {
-			if (i != node.getContent() && i != (7 - node.getContent())) {
-				Node<Integer> n = new Node<Integer>(i);
-				node.addChild(n);
-				if ((sum + i) < winNum) {
-					buildTree(sum + i, n);
-				} else {
-					//System.out.println("   Finished branch with sum " + (sum + i));
-					return;
-				}
-			}
-		}
+		buildTree(sum, node, 9000);
 	}
 
 	public void buildTree(int sum, Node<Integer> node, int depth) {
@@ -90,5 +76,7 @@ public class Bot implements Player {
 	public void initialize(int winSum,int startSum, boolean isFirst) {
 		this.winNum = winSum;
 		this.startNum = startSum;
+		
+		
 	}
 }

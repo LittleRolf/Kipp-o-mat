@@ -17,6 +17,6 @@ public class Tree<T> {
 	}
 	
 	public void printTree() {
-		
+		root.print();
 	}
 }
