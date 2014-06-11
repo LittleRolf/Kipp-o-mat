@@ -45,8 +45,12 @@ public class GameManager {
 		
 		while(currentSum < winSum) {
 			System.out.println("[GM] Player " + ((beginner)? "1" : "2") + " playing");
-			int num = ((beginner)? p1 : p2).makeTurn(currentSum, lastNum);
+			int num = 0;
+			do {
+				num = ((beginner)? p1 : p2).makeTurn(currentSum, lastNum);
+			} while(num < 1 || num > 6 || num == lastNum || num == 7-lastNum) ;
 			System.out.println("[GM] Player chose number " + num);
+			
 			lastNum = num;
 			currentSum += num;
 			System.out.println("[GM] Sum now is " + currentSum);
